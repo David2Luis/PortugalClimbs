@@ -3,12 +3,13 @@ class ProblemsController < ApplicationController
   
   def new
     @problem = Problem.new
+    # authorize @problem
   end
 
   def create
     @problem = Problem.new(problem_params)
     @problem.user = current_user
-    authorize @problem
+    # authorize @problem
     
     @problem.save ? (redirect_to problem_path(@problem)) : (render :new)
   end

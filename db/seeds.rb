@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'faker'
+
 country = [
   "Portugal",
   "Espanha",
@@ -19,6 +21,7 @@ country = [
   "Uruguai"
 ]
 counter = 0
+
 
 portuguese_female_first_names = %w[Maria Clara Beatriz Matilde Catarina Ana Bruna Vitoria Renata Carlota] # 10
 portuguese_female_last_names = %w[Santos Fernandes Sousa Rocha Alves Esteves Albuquerque Silva Louro Amorim] # 10
@@ -51,7 +54,6 @@ end
   puts "----------------------------------------------"
 
   puts "------------------ Hold on! ------------------"
-
   puts "----------------------------------------------"
   puts "------ Creating some portuguese males! -------"
   puts "----------------------------------------------"
@@ -76,6 +78,7 @@ end
   puts "------------ Welcome gentlemans! -------------"
   puts "----------------------------------------------"
 
+
 level = [
   "C1",
   "C2",
@@ -84,6 +87,14 @@ level = [
   "C5",
   "C6"
 ]
+
+Problem.create(
+  name: "C4 do vertival",
+  location: "Lisboa",
+  level: "C4",
+  category: "Gym/Boulder",
+  description: "123 oliveira 4",
+)
 
 locations = [
   "Rua Condo Redondo Nº117",
@@ -108,7 +119,7 @@ category = [
 15.times do
   problems = Problem.create(
     name: Faker::Books::Dune.character,
-    location: location[counter],
+    location: locations[counter],
     level: "#{level.sample}",
     category: "#{category.sample}",
     description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4),
