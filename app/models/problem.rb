@@ -1,5 +1,5 @@
 class Problem < ApplicationRecord
   belongs_to :user
   # has_many :review
-  validates :location, :category, :description, :level, :name
+  validates :category, :description, :level, :name, presence: true
 end
