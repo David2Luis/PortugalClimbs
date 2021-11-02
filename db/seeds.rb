@@ -85,18 +85,26 @@ level = [
   "C6"
 ]
 
-locations = [
-  "Rua Condo Redondo Nº117",
-  "Rua Manuel Arriaga Nº8",
-  "R. Prof. Hernâni Cidade",
-  "Av. da Liberdade",
-  "Rua Dom João V",
-  "Via Futebol Clube do Porto",
-  "R. Dom Tomás de Almeida 61",
-  "Via Circular do Montijo",
-  "R. Pedro Álvares Cabral 42",
-  "Av. do Uruguai 36"
-]
+Problem.create(
+  name: "C4 do vertival",
+  location: "Lisboa",
+  level: "C4",
+  category: "Gym/Boulder",
+  description: "123 oliveira 4",
+)
+
+# locations = [
+#   "Rua Condo Redondo Nº117",
+#   "Rua Manuel Arriaga Nº8",
+#   "R. Prof. Hernâni Cidade",
+#   "Av. da Liberdade",
+#   "Rua Dom João V",
+#   "Via Futebol Clube do Porto",
+#   "R. Dom Tomás de Almeida 61",
+#   "Via Circular do Montijo",
+#   "R. Pedro Álvares Cabral 42",
+#   "Av. do Uruguai 36"
+# ]
 
 category = [
   "Gym/Boulder",
@@ -106,9 +114,9 @@ category = [
 ]
 
 15.times do
-  problems = Problem.create(
+  problem = Problem.create(
     name: Faker::Books::Dune.character,
-    location: location[counter],
+    location: country[counter],
     level: "#{level.sample}",
     category: "#{category.sample}",
     description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4),
